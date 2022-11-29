@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { UntypedFormBuilder, Validators } from '@angular/forms';
+import { FormBuilder, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-contato',
@@ -33,10 +33,15 @@ export class ContatoComponent implements OnInit {
   });
 
   constructor(
-    private fb:UntypedFormBuilder
+    private fb:FormBuilder
   ) { }
 
   ngOnInit(): void {
+  }
+
+  enviarFormulario(){
+    alert("A mensagem foi enviada!");
+    this.formContato.reset();
   }
 
 }
